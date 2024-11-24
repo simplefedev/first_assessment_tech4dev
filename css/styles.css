@@ -94,6 +94,22 @@ a {
     width: 50%;
 }
 
+.max-width-22 {
+    max-width: 22rem;
+}
+
+.min-width-22 {
+    min-width: 22rem;
+}
+
+.max-width-27 {
+    max-width: 27rem;
+}
+
+.min-width-27 {
+    min-width: 27rem;
+}
+
 .margin-start-auto {
     margin-inline-start: auto;
 }
@@ -179,6 +195,7 @@ a {
 .cards {
     display: flex;
     gap: 1em;
+    justify-content: space-between;
 }
 
 .card {
@@ -213,4 +230,10 @@ a {
     padding-block: .5em;
     padding-inline: 1em;
     height: 75%;
+}
+
+@media (min-width: 1024px) {
+    .header, .main {
+        padding-inline: 4em;
+    }
 }
