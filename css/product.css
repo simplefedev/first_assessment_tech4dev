@@ -1,0 +1,83 @@
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.flex {
+    display: flex;
+    gap: 1em;
+}
+
+.gap-small {
+    gap: .1em;
+}
+
+.flex-dir-col {
+    flex-direction: column;
+}
+
+.color-silver {
+    color: #626060;
+}
+
+.color-tomato {
+    color: tomato;
+}
+
+.text-small {
+    font-size: .8rem;
+}
+
+.border-none {
+    border: none;
+}
+
+.padd-block {
+    padding-block: 1em;
+}
+
+.padd-inline {
+    padding-inline: 2em;
+}
+
+.padd-inline-small {
+    padding-inline: 1em;
+}
+
+.font-medium {
+    font-weight: 600;
+}
+
+#product {
+    height: 80vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    width: 80%;
+    max-width: 40rem;
+    margin-inline: auto;
+    min-height: 40rem;
+}
+
+.card__thumbnail {
+    overflow: hidden;
+}
+
+.card__thumbnail:hover .card__thumbnail__image {
+    transform: scale(.9);
+}
+
+.card__thumbnail__image {
+    transition: transform 500ms ease-in-out;
+    width: 100%;
+    object-fit: contain;
+}
+
+.card__contents {
+    align-self: flex-start;
+}
