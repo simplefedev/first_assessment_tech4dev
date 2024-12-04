@@ -3,60 +3,181 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Static Site</title>
   </head>
   <body>
-    <header class="header flex flex-dir-col flex-justify-between padd-inline">
-      <div class="nav-container flex flex-center width-full bg-white bg-semitransparent opacity-50 rounded-medium">
-        <h1>rendezvous</h1>
-        <nav class="nav flex flex-center width-full margin-start-auto">
-          <ul class="flex margin-start-auto">
-            <li><a href="">Discover</a></li>
-            <li><a href="">About us</a></li>
-            <li><a href="">FAQs</a></li>
-            <li><a href="">Contact us</a></li>
+    <header
+      class="flex flex-col justify-between h-[640px] px-6 lg:px-16 py-[50px] bg-[url(../images/banner.png)] bg-black/40 bg-blend-multiply bg-no-repeat bg-center bg-cover"
+    >
+      <div
+        class="flex justify-between items-center px-6 py-3 lg:bg-white/60 rounded-[20px] lg:backdrop-blur"
+      >
+        <h1 class="text-[32px] text-white lg:text-[#432361] font-bold">
+          rendezvous
+        </h1>
+        <nav
+          id="nav"
+          class="nav fixed lg:static z-20 inset-0 bg-white/90 w-full flex lg:bg-transparent items-center h-full lg:h-auto py-20 lg:py-0 font-bold backdrop-blur -translate-y-full lg:translate-y-0 transition-transform"
+        >
+          <ul class="flex relative top-12 md:top-0 -translate-y-full justify-center mx-auto w-full lg:w-auto flex-col items-center lg:flex-row gap-6 gap-2 p-2">
+            <li class=""><a class="p-2 hover:text-[#783EAD] transition-colors" href="">Discover</a></li>
+            <li><a class="p-2 hover:text-[#783EAD] transition-colors" href="">About us</a></li>
+            <li><a class="p-2 hover:text-[#783EAD] transition-colors" href="">FAQs</a></li>
+            <li><a class="p-2 hover:text-[#783EAD] transition-colors" href="">Contact us</a></li>
+            <li class="lg:hidden"><a class="p-2 hover:text-[#783EAD] transition-colors" href="">Log in</a></li>
+            <li class="lg:hidden">
+              <a
+                class="px-6 py-3 bg-[#783EAD] text-white rounded-[10px] hover:bg-black transition-colors"
+                href=""
+                >Sign up</a
+              >
+            </li>
           </ul>
-          <ul class="flex margin-start-auto">
-            <li><a href="">Log in</a></li>
-            <li><a class="btn" href="">Sign up</a></li>
+          <ul class="hidden lg:flex justify-center flex-col lg:flex-row gap-6 items-center gap-2 p-2">
+            <li><a class="p-2 hover:text-[#783EAD] transition-colors" href="">Log in</a></li>
+            <li>
+              <a
+                class="px-6 py-3 bg-[#783EAD] text-white rounded-[10px] hover:bg-black transition-colors"
+                href=""
+                >Sign up</a
+              >
+            </li>
           </ul>
         </nav>
+        <button id="hamburger-container" class="hamburger-container lg:hidden">
+          <span id="hamburger" class="hamburger"></span>
+        </button>
       </div>
-      <div class="flex gap-big flex-justify-between width-full">
-        <p class="width-half max-width-22 min-width-22 font-big color-white">
-          Ready to Rock? Discover the Hottest Events Here Your Calendar's New
+      <div class="flex flex-col lg:flex-row gap-4 justify-between text-white">
+        <p class="max-w-[460px] text-xl md:text-3xl font-bold">
+          Ready to Rock? Discover the Hottest Events Here - Your Calendar's New
           Best Friend!
         </p>
-        <form class="form flex flex-center width-half max-width-27 min-width-27 padd-inline padd-block bg-white rounded-medium">
-          <label class="label flex flex-center width-half">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="#FFFFFF">
-              <path class="icon__path--gray" d="M21 3C11.601563 3 4 10.601563 4 20C4 29.398438 11.601563 37 21 37C24.355469 37 27.460938 36.015625 30.09375 34.34375L42.375 46.625L46.625 42.375L34.5 30.28125C36.679688 27.421875 38 23.878906 38 20C38 10.601563 30.398438 3 21 3 Z M 21 7C28.199219 7 34 12.800781 34 20C34 27.199219 28.199219 33 21 33C13.800781 33 8 27.199219 8 20C8 12.800781 13.800781 7 21 7Z" fill="#FFFFFF" />
+        <form
+          class="flex flex-col lg:flex-row gap-4 px-4 py-4 lg:py-0 lg:h-[100px] justify-center lg:items-center bg-white rounded-[20px]"
+        >
+          <label
+            class="flex gap-2 w-full order-3 md:order-1 px-2 outline outline-1 lg:outline-none outline-[#E0E0E0] rounded"
+          >
+            <svg
+              class="w-3 aspect-square"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 50 50"
+            >
+              <path
+                class="fill-[#4F4F4F]"
+                d="M21 3C11.601563 3 4 10.601563 4 20C4 29.398438 11.601563 37 21 37C24.355469 37 27.460938 36.015625 30.09375 34.34375L42.375 46.625L46.625 42.375L34.5 30.28125C36.679688 27.421875 38 23.878906 38 20C38 10.601563 30.398438 3 21 3 Z M 21 7C28.199219 7 34 12.800781 34 20C34 27.199219 28.199219 33 21 33C13.800781 33 8 27.199219 8 20C8 12.800781 13.800781 7 21 7Z"
+                fill="#FFFFFF"
+              />
             </svg>
-            <input class="padd-block border-none" placeholder="Search for an event" />
+            <input
+              class="grow p-4 text-[#4F4F4F] border-none focus-visible:outline-none"
+              type="text"
+              placeholder="Search for an event"
+            />
           </label>
-          <span class="divider"></span>
-          <div class="flex width-half">
-            <select class="bg-transparent color-gray border-none">
+          <span class="order-2 w-full lg:w-1 h-px lg:h-[50%] bg-[#E0E0E0]"></span>
+          <div class="flex justify-between order-1 md:order-3 lg:gap-6">
+            <select class="pr-12 bg-transparent text-[#4F4F4F]">
               <option>Categories</option>
             </select>
-            <button class="btn border-none">Search</button>
+            <button
+              class="px-6 py-3 bg-[#783EAD] text-white rounded-[10px] hover:bg-black transition-colors"
+            >
+              Search
+            </button>
           </div>
         </form>
       </div>
     </header>
-    <main class="main flex flex-dir-col gap-medium padd-inline">
-      <div class="flex flex-justify-between">
-        <h2>Trending events</h2>
-        <p class="flex gap-small flex-center">
+    <main class="px-6 lg:px-16 py-12">
+      <div class="flex justify-between items-center font-semibold">
+        <h2 class="text-sm">Trending events</h2>
+        <p class="flex gap-1 text-xs text-[#432361]">
           <span>View all trending events</span>
-          <svg class="icon flex-col-self-end" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#FFFFFF">
-            <path class="icon__path" d="M13 6L13 8L22.5625 8L6.28125 24.28125L7.71875 25.71875L24 9.4375L24 19L26 19L26 6Z" fill="#FFFFFF" />
+          <svg
+            class="w-3 aspect-square"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+          >
+            <path
+              class="fill-[#432361]"
+              d="M13 6L13 8L22.5625 8L6.28125 24.28125L7.71875 25.71875L24 9.4375L24 19L26 19L26 6Z"
+              fill="#FFFFFF"
+            />
           </svg>
         </p>
       </div>
-      <section id="cards" class="cards"></section>
+      <section
+        class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-6 py-12"
+        id="cards"
+      ></section>
+      <section class="flex flex-col justify-center my-24 pt-36 lg:justify-between lg:flex-row gap-4 lg:gap-24 lg:items-start">
+        <div class="flex flex-col gap-6 lg:max-w-[393px]">
+          <p class="font-semibold text-3xl md:max-[393px]">
+            Discover a World of Events Tailored Just for You.
+          </p>
+          <a
+            href="#"
+            class="self-start hover:bg-black transition-colors text-white font-semibold p-3 px-6 rounded-[10px] bg-[#432361]"
+            >View all events</a
+          >
+        </div>
+        <div class="flex flex-col w-full gap-6 xl:grid grid-cols-2">
+          <div
+            class="event-card bg-cover rounded-xl flex justify-center items-center bg-[url(../images/rect1.png)] bg-blend-multiply hover:bg-black/60 transition-colors bg-black/40 w-full min-w-[321px] h-[240px]"
+          >
+            <p class="font-semibold text-2xl text-white">Online Events</p>
+          </div>
+          <div
+            class="event-card bg-cover rounded-xl flex justify-center hover:bg-black/60 transition-colors items-center bg-[url(../images/rect2.png)] bg-blend-multiply bg-black/40 w-full min-w-[321px] h-[240px]"
+          >
+            <p class="font-semibold text-2xl text-white">Physical Events</p>
+          </div>
+          <div
+            class="event-card bg-cover rounded-xl flex hover:bg-black/60 transition-colors justify-center items-center bg-[url(../images/rect3.png)] bg-blend-multiply bg-black/40 w-full min-w-[321px] h-[240px]"
+          >
+            <p class="font-semibold text-2xl text-white">Hybrid Events</p>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer class="md:flex-row flex flex-col gap-8 min-h-[343px] bg-[#432361] px-6 py-12 text-white justify-between">
+      <div class="flex flex-col gap-4 max-w-xs">
+        <h1 class="font-bold text-3xl">rendezvous</h1>
+        <p>Your Personal Event Sherpa: Curating Awesome, One Click at a Time.</p>
+      </div>
+      <div class="flex flex-col font-semibold gap-4 lg:flex-row lg:gap-24">
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-xl">Feature</p>
+          <ul class="flex flex-col">
+            <li>Events discovery</li>
+            <li>Ticketing</li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-xl">Company</p>
+          <ul class="flex flex-col">
+            <li>About us</li>
+            <li>FAQs</li>
+            <li>Carees</li>
+            <li>Support</li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-xl">Contact us</p>
+          <ul class="flex flex-col">
+            <li>info@events.com</li>
+            <li>+234 701 345 6789</li>
+            <li>Race Course, /9 Marina,
+              Onikan, Lagos Lagos. 4a Force Rd, Lagos Island 102273, Lagos
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="js/styles.js"></script>
     <script type="module" defer src="js/index.js"></script>
   </body>
 </html>

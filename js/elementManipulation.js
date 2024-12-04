@@ -1,51 +1,55 @@
 export function createProductElement(product, caller) {
 	const productCard = document.createElement('article');
 	productCard.id = product.id;
-	productCard.className = 'card';
+	productCard.className = 'grow card flex group flex-col w-full max-w-[336px] md:min-w-[387px] md:max-w-xl border border-1 border-[#E0E0E0] rounded-lg shadow';
 
 	const cardThumbnail = document.createElement('div');
-	cardThumbnail.className = 'card__thumbnail';
+	cardThumbnail.className = 'card__thumbnail group-hover:scale-[.8] group-hover:bg-black/0 h-[240px] bg-contain bg-no-repeat bg-center rounded-t-lg transition duration-1000';
+	cardThumbnail.style.backgroundImage = `url(${product.image})`;
+	console.log(product.image)
 	productCard.appendChild(cardThumbnail);
 
-	const cardThumbnailOverlay = document.createElement('div');
-	cardThumbnailOverlay.className = 'card__thumbnail__overlay';
-	cardThumbnail.appendChild(cardThumbnailOverlay);
-
-	const cardThumbnailImage = document.createElement('img');
-	cardThumbnailImage.className = 'card__thumbnail__image';
-	cardThumbnailImage.src = product.image;
-	cardThumbnailImage.alt = product.title;
-	cardThumbnail.appendChild(cardThumbnailImage);
-
 	const cardContents = document.createElement('div');
-	cardContents.className = 'card__contents';
+	cardContents.className = 'flex flex-col gap-6 px-6 py-8';
 	productCard.appendChild(cardContents);
 
 	const cardContentsChildOne = document.createElement('div');
-	cardContentsChildOne.className = 'flex flex-dir-col gap-small';
+	cardContentsChildOne.className = 'metadata flex flex-col gap-2';
 	cardContents.appendChild(cardContentsChildOne);
 
 	const title = document.createElement('p');
-	title.className = 'font-medium';
-	title.innerText = product.title;
+	title.className = 'title font-semibold';
+	if (caller === 'product') {
+		title.innerText = product.title;
+	} else {
+		title.innerText =
+			product.title.length > 25
+				? `${product.title.substring(0, 25)}...`
+				: product.title;
+	}
 	cardContentsChildOne.appendChild(title);
 
 	const categoryAndRatings = document.createElement('p');
-	categoryAndRatings.className = 'flex text-small';
+	categoryAndRatings.className = 'category-ratings font-medium text-xs flex gap-2';
 	cardContentsChildOne.appendChild(categoryAndRatings);
 
 	const category = document.createElement('span');
-	category.className = 'text-small';
+	category.className = 'category text-small';
 	category.innerText = product.category.toUpperCase();
 	categoryAndRatings.appendChild(category);
 
+	const dot = document.createElement('span');
+	dot.className = 'dot text-small text-[#432361]';
+	dot.innerText = '●';
+	categoryAndRatings.appendChild(dot);
+
 	const ratings = document.createElement('span');
 	ratings.innerText = `${product.rating.rate} / 5 : - ${product.rating.count} ratings`;
-	ratings.className = 'color-tomato font-bold';
+	ratings.className = 'font-bold';
 	categoryAndRatings.appendChild(ratings);
 
 	const cardContentsChildTwo = document.createElement('p');
-	cardContentsChildTwo.className = 'color-silver';
+	cardContentsChildTwo.className = 'description font-light';
 	if (caller === 'product') {
 		cardContentsChildTwo.innerText = product.description;
 	} else {
@@ -56,22 +60,19 @@ export function createProductElement(product, caller) {
 	}
 	cardContents.appendChild(cardContentsChildTwo);
 
-	const cardContentsChildThree = document.createElement('p');
-	cardContentsChildThree.className = 'flex gap-small text-small';
-	cardContents.appendChild(cardContentsChildThree);
-
 	if (caller === 'home') {
 		const viewMore = document.createElement('a');
 		viewMore.href = `product.html?id=${product.id}`;
-		viewMore.className = 'flex gap-small text-small';
+		viewMore.className = 'flex gap-1';
 		cardContents.appendChild(viewMore);
 
 		const viewMoreLabel = document.createElement('span');
+		viewMoreLabel.className = 'text-[#432361] text-xs'
 		viewMoreLabel.innerText = 'View Details';
 		viewMore.appendChild(viewMoreLabel);
 
 		viewMore.innerHTML +=
-			'<svg class="icon flex-col-self-end" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#FFFFFF"><path class="icon__path" d="M13 6L13 8L22.5625 8L6.28125 24.28125L7.71875 25.71875L24 9.4375L24 19L26 19L26 6Z" fill="#FFFFFF" /></svg>';
+			'<svg class="w-3 aspect-square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#FFFFFF"><path class="fill-[#432361]" d="M13 6L13 8L22.5625 8L6.28125 24.28125L7.71875 25.71875L24 9.4375L24 19L26 19L26 6Z" fill="#FFFFFF" /></svg>';
 	}
 
 	return productCard;

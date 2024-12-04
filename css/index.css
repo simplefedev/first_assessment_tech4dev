@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Gilroy, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 100;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-Thin.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 100;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-ThinItalic.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 200;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-UltraLight.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 200;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-UltraLightItalic.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 300;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-Light.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 300;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 400;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-Regular.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 400;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-RegularItalic.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 500;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-Medium.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 500;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-MediumItalic.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 600;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 600;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-SemiBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 700;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-Bold.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 700;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 800;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 800;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 900;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-Black.ttf');
+}
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: 900;
+    font-style: italic;
+    src: local('Gilroy'),
+    url('/fonts/Gilroy-BlackItalic.ttf');
+}
+
+.nav.open {
+    transform: translateY(0);
+}
+
+.nav.open + .hamburger-container .hamburger {
+    background-color: transparent;
+}
+
+.nav.open + .hamburger-container .hamburger::before,
+.nav.open + .hamburger-container .hamburger::after {
+    background-color: #783EAD;
+}
+
+.nav.open + .hamburger-container .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav.open + .hamburger-container .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.hamburger-container {
+    position: relative;
+    z-index: 999;
+    height: calc((3px * 3) + (.5rem * 2));
+}
+
+.hamburger {
+    position: relative;
+    display: block;
+    background-color: white;
+    width: 2rem;
+    height: 3px;
+    border-radius: 999px;
+    transition: all 700ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    background-color: inherit;
+    left: 0;
+    right: 0;
+    border-radius: inherit;
+}
+
+.hamburger::before {
+    top: -.5rem;
+}
+
+.hamburger::after {
+    bottom: -.5rem;
+}
