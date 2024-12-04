@@ -3,11 +3,189 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Product</title>
   </head>
   <body>
-    <div id="product"></div>
+    <header class="flex flex-col justify-between px-6 lg:px-16 py-[50px]">
+      <div
+        class="flex justify-between items-center px-6 py-3 lg:bg-white/60 rounded-[20px] lg:backdrop-blur"
+      >
+        <h1 class="text-[32px] text-[#432361] font-bold">rendezvous</h1>
+        <nav
+          id="nav"
+          class="nav fixed lg:static z-20 inset-0 bg-white/90 w-full flex lg:bg-transparent items-center h-full lg:h-auto py-20 lg:py-0 font-bold backdrop-blur -translate-y-full lg:translate-y-0 transition-transform"
+        >
+          <ul
+            class="flex text-[#432361] relative top-12 md:top-0 -translate-y-full lg:translate-y-0 justify-center mx-auto w-full lg:w-auto flex-col items-center lg:flex-row gap-6 gap-2 p-2"
+          >
+            <li class="">
+              <a class="p-2 hover:text-[#783EAD] transition-colors" href=""
+                >Discover</a
+              >
+            </li>
+            <li>
+              <a class="p-2 hover:text-[#783EAD] transition-colors" href=""
+                >About us</a
+              >
+            </li>
+            <li>
+              <a class="p-2 hover:text-[#783EAD] transition-colors" href=""
+                >FAQs</a
+              >
+            </li>
+            <li>
+              <a class="p-2 hover:text-[#783EAD] transition-colors" href=""
+                >Contact us</a
+              >
+            </li>
+            <li class="lg:hidden">
+              <a class="p-2 hover:text-[#783EAD] transition-colors" href=""
+                >Log in</a
+              >
+            </li>
+            <li class="lg:hidden">
+              <a
+                class="px-6 py-3 bg-[#783EAD] text-white rounded-[10px] hover:bg-black transition-colors"
+                href=""
+                >Sign up</a
+              >
+            </li>
+          </ul>
+          <ul
+            class="hidden lg:flex justify-center flex-col lg:flex-row gap-6 items-center gap-2 p-2"
+          >
+            <li>
+              <a class="p-2 hover:text-[#783EAD] transition-colors" href=""
+                >Log in</a
+              >
+            </li>
+            <li>
+              <a
+                class="px-6 py-3 bg-[#783EAD] text-white rounded-[10px] hover:bg-black transition-colors"
+                href=""
+                >Sign up</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button id="hamburger-container" class="hamburger-container lg:hidden">
+          <span id="hamburger" class="hamburger product-hamburger"></span>
+        </button>
+      </div>
+    </header>
+    <main id="product" class="px-6 lg:px-16 pb-24">
+      <div class="flex flex-col gap-8">
+        <div class="w-full group h-[360px] md:h-[480px] rounded-[10px]">
+          <div id="product-photo" class="w-full transition-transform duration-1000 group-hover: group-hover:scale-75 bg-no-repeat bg-center bg-contain hover:scale[.8] h-full rounded-[10px]"></div>
+        </div>
+        <div>
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-between font-bold text-[#432361]">
+              <span id="title">Title</span>
+              <span id="price">Price</span>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+              <div class="product-metadata flex flex-col gap-8 md:w-[55%]">
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-col md:flex-row gap-2 md:gap-4">
+                    <span class="flex gap-1 items-center">
+                      <img src="images/calendar.svg" />
+                      <span>Sunday, October 3rd, 2023</span>
+                    </span>
+                    <span class="flex gap-1 items-center">
+                      <img src="images/time.svg" />
+                      <span>6PM</span>
+                    </span>
+                  </div>
+                  <span>
+                    <span class="flex gap-1 items-start md:items-center">
+                      <img src="images/Location.svg" />
+                      <span
+                        >Race Course, 8/9 Marina, Onikan, Lagos Lagos, 4aa Force Rd,
+                        Lagos Island 102273, Lagos</span
+                      >
+                    </span>
+                  </span>
+                  <span>
+                    <span class="flex gap-1 items-center">
+                      <img src="images/User.svg" />
+                      <span>RFK Junior</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="font-bold">Product description - (<span class="tex-xs text-[#783EAD]" id="category"></span>)</p>                  
+                  <p id="description"></p>
+                    <p class="font-bold">Ticket Pricing</p>
+                    <div class="flex gap-8">
+                      <p class="flex flex-col">
+                        <span class="font-medium">Single</span>
+                        <span id="single" class="text-[#9B51E0] font-bold">NGN 5,000.00</span>
+                      </p>
+                      <p class="flex flex-col">
+                        <span class="font-medium">Pair</span>
+                        <span id="pair" class="text-[#9B51E0] font-bold">NGN 9,000.00</span>
+                      </p>
+                    </div>
+                </div>
+                <button class="self-start px-6 py-3 text-white rounded-[10px] hover:bg-black transition-colors bg-[#783EAD]">Buy now</button>
+              </div>
+
+              <div class="contact-organisers flex flex-col gap-8 md:w-[40%]">
+                <div class="flex flex-col gap-2 md:gap-4">
+                  <p class="font-bold">Contact Organisers</p>
+                  <div class="flex gap-4">
+                    <img src="images/🦆 icon _circle email_.svg" />
+                    <img src="images/🦆 icon _rounded twitterbird_.svg" />
+                    <img src="images/ig.svg" />
+                  </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="font-bold">Directions</p>
+                  <img src="images/map.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="md:flex-row flex flex-col gap-8 min-h-[343px] bg-[#432361] px-6 py-12 text-white justify-between">
+      <div class="flex flex-col gap-4 max-w-xs">
+        <h1 class="font-bold text-3xl">rendezvous</h1>
+        <p>Your Personal Event Sherpa: Curating Awesome, One Click at a Time.</p>
+      </div>
+      <div class="flex flex-col font-semibold gap-4 lg:flex-row lg:gap-24">
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-xl">Feature</p>
+          <ul class="flex flex-col">
+            <li>Events discovery</li>
+            <li>Ticketing</li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-xl">Company</p>
+          <ul class="flex flex-col">
+            <li>About us</li>
+            <li>FAQs</li>
+            <li>Carees</li>
+            <li>Support</li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-xl">Contact us</p>
+          <ul class="flex flex-col">
+            <li>info@events.com</li>
+            <li>+234 701 345 6789</li>
+            <li>Race Course, /9 Marina,
+              Onikan, Lagos Lagos. 4a Force Rd, Lagos Island 102273, Lagos
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="js/styles.js"></script>
     <script type="module" defer src="js/load.js"></script>
   </body>
 </html>

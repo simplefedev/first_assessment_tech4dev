@@ -180,6 +180,11 @@ body {
     transition: all 700ms ease-in-out;
 }
 
+.product-hamburger {
+    background-color: #432361;
+    transition: all 300ms ease-in-out;
+}
+
 .hamburger::before,
 .hamburger::after {
     content: '';
