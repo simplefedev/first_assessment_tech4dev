@@ -1,7 +1,12 @@
 export function createProductElement(product, caller) {
 	const productCard = document.createElement('article');
 	productCard.id = product.id;
-	productCard.className = 'grow card flex group flex-col w-full max-w-[336px] md:min-w-[307px] md:max-w-xl border border-1 border-[#E0E0E0] rounded-lg shadow';
+	productCard.className = 'grow relative card flex group flex-col w-full max-w-[336px] md:min-w-[307px] md:max-w-xl border border-1 border-[#E0E0E0] rounded-lg shadow min-h-[514px]';
+
+	const categoryTag = document.createElement('span');
+	categoryTag.className = 'bg-[#783EAD]/80 text-xs z-50 absolute top-4 text-white font-bold shadow right-2 px-4 py-2 rounded-full';
+	categoryTag.innerText = product.category;
+	productCard.appendChild(categoryTag);
 
 	const cardThumbnail = document.createElement('div');
 	cardThumbnail.className = 'card__thumbnail group-hover:scale-[.8] group-hover:bg-black/0 h-[240px] bg-contain bg-no-repeat bg-center rounded-t-lg transition duration-1000';
